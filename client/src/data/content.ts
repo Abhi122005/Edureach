@@ -102,28 +102,28 @@ export const quotesContent = [
 // ---- MENTORS ----
 export const mentorsContent = [
   {
-    name: "Dr. Rajesh Kumar",
+    name: "Dr. Kelly Morgan",
     role: "Head of CSE Department",
     image: images.teacher1,
     bio: "PhD IIT Bombay · 20+ years · 50+ research papers",
     teaches: "AI, ML, Data Science",
   },
   {
-    name: "Prof. Ananya Sharma",
+    name: "Prof. Cole Anderson",
     role: "Associate Professor, ECE",
     image: images.teacher2,
     bio: "M.Tech IIT Hyderabad · 15 yrs academia + 5 yrs Texas Instruments",
     teaches: "VLSI, Embedded Systems, IoT",
   },
   {
-    name: "Dr. Vikram Patel",
+    name: "Dr. Melissa Brown",
     role: "Professor, AI & DS",
     image: images.teacher3,
     bio: "PhD Stanford · Former Google Research · 30+ NeurIPS papers",
     teaches: "NLP, Deep Learning, Computer Vision",
   },
   {
-    name: "Prof. Meera Reddy",
+    name: "Prof. Henry Davis",
     role: "Head of MBA Department",
     image: images.teacher4,
     bio: "MBA IIM Ahmedabad · PhD ISB · 18 yrs + 7 yrs Deloitte",
