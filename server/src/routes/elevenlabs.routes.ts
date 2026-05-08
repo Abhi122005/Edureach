@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { startCall } from "../controllers/vapi.controller.ts";
+import { startCall } from "../controllers/elevenlabs.controller.ts";
 import authMiddleware from "../middleware/auth.middleware.ts";
 
 const router = Router();

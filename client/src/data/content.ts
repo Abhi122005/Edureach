@@ -176,7 +176,7 @@ export const eventsGallery = [
   { title: "University Fest", image: images.universityFest },
   { title: "Sports Meet", image: images.collegeOutdoor },
 ];
-export const vapiFormContent = {
+export const elevenlabsFormContent = {
   courses: [
     "B.Tech Computer Science (CSE)",
     "B.Tech Electronics (ECE)",

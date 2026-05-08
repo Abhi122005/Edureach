@@ -1,11 +1,11 @@
 import type { Request, Response, NextFunction } from "express";
 import User from "../models/user.model.ts";
-import { initiateOutboundCall } from "../services/vapi.service.ts";
+import { initiateOutboundCall } from "../services/elevenlabs.service.ts";
 
-// POST /api/vapi/call
+// POST /api/elevenlabs/call
 export const startCall = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
   try {
-    const { phoneNumber, preferredCourse } = req.body;
+    const { phoneNumber, preferredCourse, queryTopic } = req.body;
 
     if (!phoneNumber || phoneNumber.trim().length < 10) {
       res.status(400).json({ success: false, message: "Valid phone number is required." });
@@ -21,16 +21,21 @@ export const startCall = async (req: Request, res: Response, next: NextFunction)
     }
 
     const result = await initiateOutboundCall({
-        phoneNumber: phoneNumber.trim(),
-        userName: user.name,
-        preferredCourse,
-        userEmail: ""
+      phoneNumber: phoneNumber.trim(),
+      userName: user.name,
+      userEmail: user.email,
+      preferredCourse,
+      queryTopic,
     });
 
     res.status(200).json({
       success: true,
       message: "Call initiated. You will receive a call shortly.",
-      data: { callId: result.id, status: result.status },
+      data: {
+        conversationId: result.conversation_id,
+        callSid: result.callSid,
+        status: result.success ? "initiated" : "failed",
+      },
     });
   } catch (error) {
     next(error);

@@ -4,7 +4,7 @@ import cors from "cors";
 import authRoutes from "./routes/auth.routes.ts";
 import errorHandler from "./middleware/error-handler.middleware.ts";
 import chatRoutes from "./routes/chat.routes.ts";
-import vapiRoutes from "./routes/vapi.routes.ts";
+import elevenlabsRoutes from "./routes/elevenlabs.routes.ts";
 
 const app: Application = express();
 
@@ -21,7 +21,7 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use("/api/auth", authRoutes);
 app.use("/api/chat", chatRoutes);
-app.use("/api/vapi", vapiRoutes);
+app.use("/api/elevenlabs", elevenlabsRoutes);
 app.use((_req: Request, res: Response) => {
   res.status(404).json({ success: false, message: "Route not found." });
 });

@@ -2,8 +2,8 @@ import { useState } from "react";
 import { X, Phone, CheckCircle, AlertCircle, Loader2 } from "lucide-react";
 import toast from "react-hot-toast";
 import { useAuth } from "../context/AuthContext";
-import { initiateCall } from "../services/vapi.service";
-import { vapiFormContent } from "../data/content";
+import { initiateCall } from "../services/elevenlabs.service";
+import { elevenlabsFormContent } from "../data/content";
 
 interface CallPopupProps {
   open: boolean;
@@ -85,7 +85,7 @@ export default function CallPopup({ open, onClose }: CallPopupProps) {
                 <select value={course} onChange={(e) => setCourse(e.target.value)}
                   className="w-full px-4 py-2.5 border border-gray-200 rounded-lg focus:outline-none focus:border-maroon focus:ring-1 focus:ring-maroon text-sm transition-colors duration-200">
                   <option value="">Select a course</option>
-                  {vapiFormContent.courses.map((c) => <option key={c} value={c}>{c}</option>)}
+                  {elevenlabsFormContent.courses.map((c) => <option key={c} value={c}>{c}</option>)}
                 </select>
               </div>
               <div>
@@ -93,7 +93,7 @@ export default function CallPopup({ open, onClose }: CallPopupProps) {
                 <select value={topic} onChange={(e) => setTopic(e.target.value)}
                   className="w-full px-4 py-2.5 border border-gray-200 rounded-lg focus:outline-none focus:border-maroon focus:ring-1 focus:ring-maroon text-sm transition-colors duration-200">
                   <option value="">Select a topic</option>
-                  {vapiFormContent.topics.map((t) => <option key={t} value={t}>{t}</option>)}
+                  {elevenlabsFormContent.topics.map((t) => <option key={t} value={t}>{t}</option>)}
                 </select>
               </div>
               <button type="submit"
